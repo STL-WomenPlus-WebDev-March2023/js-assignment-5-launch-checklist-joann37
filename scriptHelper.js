@@ -1,7 +1,7 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageURL) {
+function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
         let mTarget = `
                 <h2>Mission Destination</h2>
@@ -12,27 +12,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Distance from Earth: ${distance} </li>
                     <li>Number of Moons: ${moons} </li>
                 </ol>
-                <img src="${imageURL} ">
+                <img src="${imageUrl} ">
          `;
          document.getElementById("missionTarget").innerHTML = mTarget;
 } 
 
-
-window.addEventListener("load", function() {
-    let form = document.querySelector("form");
-        
-    form.addEventListener("submit", function(event) {
-        
-            let pilotName = document.querySelector("input[name=pilotName]").value;
-            let copilotName = document.querySelector("input[name=copilotName]").value;
-            let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
-            let cargoMass = document.querySelector("input[name=cargoMass]").value;
-
-            event.preventDefault();
-    formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
-
-        })
-    });
 
 function validateInput(testInput) {
     let numberInput = Number(testInput);
@@ -42,7 +26,7 @@ function validateInput(testInput) {
     } else if (isNaN(testInput)) {
         return "Is not a number";
 
-    } else if (!isNaN(testInput )) {
+    } else {
         return "Is a number";
     }
 
@@ -123,8 +107,8 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-    let index = Math.floor(Math.random()* planets.length);
-    return planets[index];
+    let randomPick = Math.floor(Math.random()* planets.length);
+    return planets[randomPick];
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
