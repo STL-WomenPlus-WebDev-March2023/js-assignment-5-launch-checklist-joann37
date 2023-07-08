@@ -12,25 +12,25 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Distance from Earth: ${distance} </li>
                     <li>Number of Moons: ${moons} </li>
                 </ol>
-                <img src="${imageUrl} ">c
+                <img src= "${imageUrl} ">
          `;
          document.getElementById("missionTarget").innerHTML = mTarget;
-} 
+}
 
 
 function validateInput(testInput) {
     let numberInput = Number(testInput);
-    if (testInput === ""){
+    if (testInput === "") {
         return "Empty";
 
     } else if (isNaN(testInput)) {
-        return "Is not a number";
+        return "Not a Number";
 
     } else {
-        return "Is a number";
+        return "Is a Number";
     }
 
-}  
+}
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
    let pilotV = validateInput(pilot);
@@ -70,7 +70,7 @@ if (fuelLevel < 10000) {
     list.style.visibility = "visible";
 
 } else {
-    document.getElementById("fuelStatus").innerHTML = "Fuel level is suffient for shuttle launch";
+    document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
 
  }
 if (cargoMass > 10000) {
@@ -81,7 +81,7 @@ if (cargoMass > 10000) {
 
 
 } else {
-    document.getElementById("cargoStatus").innerHTML = "Cargo Mass is low enough for launch";
+    document.getElementById("cargoStatus").innerHTML = "Cargo Mass low enough for launch";
 
  }
 if (fuelLevel >= 10000) {
